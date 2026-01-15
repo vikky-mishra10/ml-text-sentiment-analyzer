@@ -4,20 +4,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
-# Sample dataset
-data = {
-    "text": [
-        "I love this product",
-        "This is an amazing experience",
-        "I hate this",
-        "This is very bad",
-        "Absolutely fantastic",
-        "Worst service ever"
-    ],
-    "label": [1, 1, 0, 0, 1, 0]  # 1 = Positive, 0 = Negative
-}
+# Load dataset
+df = pd.read_csv("data/sentiment_data.csv")
 
-df = pd.DataFrame(data)
+X = df["text"]
+y = df["label"]
+
 
 X = df["text"]
 y = df["label"]
